@@ -1,0 +1,100 @@
+h2 {
+  font-size: 21px;
+}
+
+card-recipe {
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    margin-bottom: 15px;
+    // height: 470px;
+    // border-radius: 33px;
+    box-shadow: 4px 4px 5px #ddd;
+
+    .top {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px 30px 5px 30px;
+      &-avatar {
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
+      &-username {
+        margin-left: 15px;
+        font-size: 15px;
+        color: #6a6969;
+      }
+    }
+
+    .middle {
+      img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        color: #6a6969;
+        padding: 20px 30px 20px 30px;
+        text-align: center;
+        h2 {
+          font-weight: medium;
+          margin: 0;
+          font-size: 22px;
+        }
+      }
+      &-stats {
+        border-top: 1px solid #ddd;
+
+        &-list {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          list-style: none;
+          height: 100%;
+          color: #9e9e9e;
+        }
+        &-item {
+          padding: 15px;
+          &-rating {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #9f9c9c;
+    margin-bottom: 4px;
+  }
+  .amount-desc {
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}

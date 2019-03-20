@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Edit Recipe
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+
+    <form (ngSubmit)="update()">
+        <ion-item>
+          <ion-label floating>Name of The Food (Min: 3 Characters)</ion-label>
+          <ion-input (change)="isFilled()" [(ngModel)]="title" type="text" name="title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Description (Min: 5 Characters)</ion-label>
+          <ion-textarea (change)="isFilled()" [(ngModel)]="description" type="text" rows="3" name="description"></ion-textarea>
+        </ion-item>
+        <button [disabled]="!filled" ion-button block type="submit">Update</button>
+      </form>
+    
+      <ion-card>
+        <img #preview [src]="'https://media.mw.metropolia.fi/wbma/uploads/' + (media.filename)">
+      </ion-card>
+
+</ion-content>

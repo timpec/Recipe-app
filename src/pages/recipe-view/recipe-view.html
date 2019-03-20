@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title *ngIf="(recipe$ | async)">{{
+      (recipe$ | async).title
+    }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="(recipe$ | async)">
+  <div class="recipe">
+    <div class="recipe-image">
+      <img [src]="helperProvider.mediaFilePath + (recipe$ | async).filename" />
+    </div>
+    <div class="recipe-title">
+      <h1>{{ (recipe$ | async).title }}</h1>
+    </div>
+    <div class="recipe-rating">
+      <ionic3-star-rating
+        activeIcon="ios-star"
+        defaultIcon="ios-star-outline"
+        activeColor="#e57373"
+        defaultColor="#999"
+        readonly="{{ readOnly }}"
+        [rating]="userRating"
+      >
+      </ionic3-star-rating>
+    </div>
+    <div class="recipe-description">
+      <p>{{ (recipe$ | async).description }}</p>
+    </div>
+    <div class="recipe-comment-btn">
+      <button ion-button outline (click)="showComments(fileId)">
+        {{ (comments$ | async).length }} Comments
+      </button>
+    </div>
+  </div>
+</ion-content>

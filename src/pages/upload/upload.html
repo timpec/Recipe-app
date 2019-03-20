@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add new recipe</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<form (ngSubmit)="upload()">
+  <ion-item>
+    <ion-label floating>Name of The Food (Min: 3 Characters)</ion-label>
+    <ion-input (change)="isFilled()" [(ngModel)]="title" type="text" name="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Description (Min: 5 Characters)</ion-label>
+    <ion-textarea (change)="isFilled()" [(ngModel)]="description" rows="3" type="text" name="description"></ion-textarea>
+  </ion-item>
+  <div class="row">
+      <button class="btn" ion-button type="button" (click)="choose()">
+        <ion-icon name="image"></ion-icon>
+      </button>
+      <h6>OR</h6>
+      <button class="btn" ion-button type="button" (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+  </div>
+  <button [disabled]="!filled" ion-button block type="submit" name="submit">Upload</button>
+</form>
+
+<ion-card>
+  <img [hidden]="!image" #preview [src]="blob">
+</ion-card>
+</ion-content>

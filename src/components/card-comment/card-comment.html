@@ -1,0 +1,41 @@
+<ion-list>
+  <ion-item-sliding>
+    <ion-item>
+      <div
+        [className]="
+          (comment.user_id | owner | async)
+            ? 'card-wrapper owner-mark'
+            : 'card-wrapper'
+        "
+      >
+        <div class="top-row">
+          <div class="top-user-info">
+            <div class="top-username">
+              <p>{{ comment.user_id | username: "fullname" | async }}</p>
+            </div>
+          </div>
+          <div class="top-date">
+            <span>{{ comment.time_added | date: "short" }}</span>
+          </div>
+        </div>
+
+        <div class="bottom-row">
+          <p class="bottom-text">
+            {{ comment.comment }}
+          </p>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item-options *ngIf="(comment.user_id | owner | async)" side="right">
+      <button
+        ion-button
+        color="primary"
+        small
+        (click)="removeComment(comment.comment_id)"
+      >
+        <ion-icon name="trash"></ion-icon>
+        Remove
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>

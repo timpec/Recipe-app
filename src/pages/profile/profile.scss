@@ -1,0 +1,38 @@
+page-profile {
+  .media {
+    margin-top: 20px;
+    padding: 20px;
+
+    &__title {
+      color: #999;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .profile {
+    background-color: #fafafa;
+    height: 230px;
+    box-shadow: 4px 4px 5px #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__username {
+      color: #6a6969;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    &__email {
+      color: #6a6969;
+      font-size: 14px;
+    }
+  }
+}
+.item .item-block .item-md {
+  background-color: #e57373;
+}
+
+.list-ios > .item-block:first-child {
+}

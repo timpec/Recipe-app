@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title *ngIf="commentsList"
+      >{{ (comments$ | async).length }} Comment(s)</ion-title
+    >
+  </ion-navbar>
+</ion-header>
+<!-- FIXME: add beautiful input files -->
+<ion-content>
+  <ion-grid>
+    <form #f="ngForm" (submit)="addComment(f)">
+      <ion-row>
+        <ion-col col-10>
+          <ion-input
+            type="text"
+            name="comment"
+            placeholder="Input comment"
+            ngModel
+            name="comment"
+            required
+          ></ion-input>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button icon-only round type="submit">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+  <card-comment
+    *ngFor="let comment of (comments$ | async | reverse)"
+    [comment]="comment"
+    (delComment)="deleteComment($event)"
+  ></card-comment>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header *ngIf="isLoggedIn">
+  <ion-searchbar
+    color="light"
+    [(ngModel)]="searchBar"
+    name="searchBar"
+    (ionInput)="searchMedia()"
+    debounce="600"
+  ></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <card-recipe
+    *ngFor="let item of mediaList"
+    [item]="item"
+  ></card-recipe>
+</ion-content>

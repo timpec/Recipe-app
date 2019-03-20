@@ -1,0 +1,7 @@
+{
+  "name": "kitchenLibApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

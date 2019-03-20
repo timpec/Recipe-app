@@ -1,0 +1,52 @@
+<div class="card-wrapper">
+  <div *ngIf="isLoggedIn" class="top">
+    <div class="top-username">
+      <p>{{ item.user_id | username: "fullname" | async | titlecase }}</p>
+    </div>
+  </div>
+  <div class="middle">
+    <img
+      [src]="item.file_id | thumbnail: 'medium' | async"
+      [alt]="item.title"
+      (click)="showRecipePage(item.file_id)"
+    />
+  </div>
+  <div class="bottom">
+    <div class="bottom-title">
+      <h2>{{ item.title }}</h2>
+    </div>
+    <div class="bottom-stats">
+      <ul class="bottom-stats-list">
+        <li class="bottom-stats-item">
+          <div class="bottom-stats-item-rating">
+            <span class="amount">{{ item.file_id | rating | async }}</span>
+            <span class="amount-desc">Rating</span>
+          </div>
+        </li>
+        <li class="bottom-stats-item">
+          <div class="bottom-stats-item-rating">
+            <span class="amount">{{ item.file_id | comment | async }}</span>
+            <span class="amount-desc">Comments</span>
+          </div>
+        </li>
+        <li *ngIf="isLoggedIn" class="bottom-stats-item">
+          <div class="bottom-stats-item-rating">
+            <button
+              ion-button
+              icon-start
+              clear
+              small
+              color="tomato"
+              (click)="addBookmark(item.file_id)"
+              large
+            >
+              <ion-icon
+                [name]="isFavorite ? 'heart' : 'heart-outline'"
+              ></ion-icon>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

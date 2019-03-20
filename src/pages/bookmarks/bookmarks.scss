@@ -1,0 +1,21 @@
+page-bookmarks {
+  .title {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #6a6969;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .no-bookmarks {
+    margin-top: 80px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p {
+      color: #999;
+    }
+  }
+}

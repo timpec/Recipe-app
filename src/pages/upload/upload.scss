@@ -1,0 +1,14 @@
+page-upload {
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 2em 0 2em 0;
+    }
+
+    .btn {
+        height: 3.5em;
+        width: 4.5em;
+    }
+
+}

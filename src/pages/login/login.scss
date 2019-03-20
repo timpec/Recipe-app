@@ -1,0 +1,37 @@
+page-login {
+  .container {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    align-self: center;
+    justify-self: center;
+    width: 100px;
+    height: 100px;
+  }
+  form {
+    margin-top: 30%;
+  }
+
+  .invalid {
+    border: 2px solid #ea6153;
+  }
+
+  .invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+  }
+
+  ion-input {
+    background-color: #fafafa;
+    border: 1px solid #efefef;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    width: 100%;
+  }
+  .item-ios.item-block .item-inner {
+    border: none;
+  }
+}
